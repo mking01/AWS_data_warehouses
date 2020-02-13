@@ -2,10 +2,12 @@ import configparser
 
 
 # CONFIG
+# Gets AWS credentials from config file
 config = configparser.ConfigParser()
 config.read('dwh.cfg')
 
 # DROP TABLES
+# SQL statements to drop existing tables if they exist prior to creating new ones
 staging_events_table_drop = "DROP TABLE IF EXISTS staging_events"
 staging_songs_table_drop = "DROP TABLE IF EXISTS staging_songs"
 songplay_table_drop = "DROP TABLE IF EXISTS songplay"
@@ -15,6 +17,7 @@ artist_table_drop = "DROP TABLE IF EXISTS artists"
 time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
+# SQL statements to create new tables
 staging_events_table_create= ("""CREATE TABLE staging_events (
                                     artist varchar,
                                     auth varchar,
