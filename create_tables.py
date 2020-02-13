@@ -5,6 +5,9 @@ from sql_queries import create_table_queries, drop_table_queries
 def drop_tables(cur, conn):
     '''
     Purpose:  Drop existing SQL tables
+    cur: cursor that executes query line by line
+    conn: AWS connection
+    return: None
     '''
     for query in drop_table_queries:
         cur.execute(query)
@@ -13,6 +16,9 @@ def drop_tables(cur, conn):
 def create_tables(cur, conn):
     '''
     Purpose:  Create SQL tables using sql statements in sql_queries.py
+    cur: cursor that executes query line by line
+    conn: AWS connection
+    return: None
     '''
     for query in create_table_queries:
         cur.execute(query)
