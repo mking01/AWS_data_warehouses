@@ -2,13 +2,6 @@ import configparser
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
-conn = psycopg2.connect(dbname='dev',
-                        host='redshift-cluster.cgzbsoqrtzcd.us-east-2.redshift.amazonaws.com',
-                        user='awsuser',
-                        password='WestLoop3102',
-                        port=5439)
-
-
 def drop_tables(cur, conn):
     '''
     Purpose:  Drop existing SQL tables
